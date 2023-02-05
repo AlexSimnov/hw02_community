@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ title }}
+{% endblock title %}
+{% block content %}
+    <main>
+      <!-- класс py-5 создает отступы сверху и снизу блока -->
+      <div class="container py-5">
+        <h1>{{ group.title }}</h1>
+  <ul>
+    <li>
+      Название группы: {{ group.title }}
+    </li>
+    <li>
+      Уникальный адресс: {{ group.slug }}
+    </li>
+  </ul>
+  <p>{{ group.description }}</p> 
+  <a href="{% url 'posts_1:posts_main_padge' %}">все записи группы</a>
+        <!-- под последним постом нет линии -->
+      </div>  
+    </main>
+    {% endblock content %}
