@@ -7,7 +7,6 @@ app_name = 'posts_1'
 urlpatterns = [
     
     path('', views.index, name='posts_main_padge'),
-    path('group/<slug>/', views.posts_list, name='posts_second_padge'),
     path('group/<slug:pk>/', views.posts_list),
 
     path('justpage/', views.JustStaticPage.as_view()),
