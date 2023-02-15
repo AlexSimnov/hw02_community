@@ -1,11 +1,11 @@
 # ice_cream/urls.py
-from django.urls import path,include
+from django.urls import path
 from . import views
 
 app_name = 'posts_1'
 
 urlpatterns = [
-    
+
     path('', views.index, name='posts_main_padge'),
     path('group/<slug:pk>/', views.posts_list),
 

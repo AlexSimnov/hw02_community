@@ -5,6 +5,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+
 class Group(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=30, unique=True)
@@ -12,7 +13,6 @@ class Group(models.Model):
 
     def __str__(self) -> str:
         return self.title
-
 
 
 class Post(models.Model):
