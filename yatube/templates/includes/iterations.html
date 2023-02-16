@@ -11,7 +11,7 @@
       <p>{{ post.text|linebreaks }}</p>
       <a href=""> Подробная информация </a>
     </article>
-      {% if post.group and show_group_link %}
+      {% if post.group or link %}
       <a href="{% url 'posts:posts_main_padge' %}">все записи группы</a>
       {% endif %}
   {% if not forloop.last %}<hr>{% endif %}

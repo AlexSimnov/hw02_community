@@ -7,8 +7,10 @@ PAGES: int = 10
 
 def index(request):
     posts = Post.objects.all()[:PAGES]
+    show_group_link: bool = True
     context = {
         'posts': posts,
+        'link': show_group_link,
     }
     return render(request, 'posts/index.html', context)
 
