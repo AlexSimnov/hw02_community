@@ -1,7 +1,6 @@
-from django.db import models
-
 # Create your models here.
 from django.contrib.auth import get_user_model
+from django.db import models
 
 User = get_user_model()
 
@@ -25,10 +24,14 @@ class Post(models.Model):
     )
     group = models.ForeignKey(
         Group,
-        on_delete=models.CASCADE,
+        on_delete=None,
         blank=True,
         null=True,
+        related_name='group',
     )
+
+    class Meta:
+        ordering = ["-pub_date"]
 
     def __str__(self) -> str:
         return self.text
