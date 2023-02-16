@@ -13,9 +13,9 @@ def index(request):
     return render(request, 'posts/index.html', context)
 
 
-def posts_list(request, pk):
+def posts_list(request, slug):
 
-    group = get_object_or_404(Group, slug=pk)
+    group = get_object_or_404(Group, slug=slug)
 
     posts = Post.objects.filter(group=group).all()[:PAGES]
     context = {
