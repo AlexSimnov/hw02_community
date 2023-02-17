@@ -2,7 +2,9 @@
 {% block title %}Последние обновления на сайте{% endblock %}
 {% block content %}
   {% for post in posts %}
+    {% with show_group_link as 1  %}
     {% include 'includes/iterations.html' %}
+    {% endwith %}
   {% endfor %}
   {% include 'includes/paginator.html' %}
 {% endblock %}
