@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}
-Все записи сообщества {{ group.title }}
+Все записи сообщества {{ posts.title }}
 {% endblock title %}
 {% block content %}
-        <h1>{{ group.title }}</h1>
-        <p>{{ group.description }}</p> 
+        <h1>{{ posts.title }}</h1>
+        <p>{{ posts.description }}</p> 
         {% for post in posts %}
         {% include 'includes/iterations.html' %}
       {% endfor %} 

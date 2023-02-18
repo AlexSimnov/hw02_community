@@ -17,7 +17,7 @@ def posts_list(request, slug):
 
     group = get_object_or_404(Group, slug=slug)
 
-    posts = Post.objects.filter(posts=group).all()[:PAGES]
+    posts = group.posts.all()[:PAGES]
     context = {
         'group': group,
         'posts': posts,
